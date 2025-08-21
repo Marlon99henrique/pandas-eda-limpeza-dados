@@ -159,7 +159,7 @@ pandas-eda-limpeza-dados/
 │   ├── test_validacao_dados.py   # ✅ Testes de validação
 │   ├── test_utils.py             # ✅ Testes dos utilitários
 │   └──test_visualizacao.py       # ✅ Testes de visualização  
-|
+│
 ├── docs/                         # 📚 Documentação
 │   ├── metodologia.md            # 📋 Metodologia aplicada
 │   ├── resultados_analise.md     # 📊 Resultados da análise
