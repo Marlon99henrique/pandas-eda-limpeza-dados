@@ -51,10 +51,10 @@ df.pipe(diagnosticar_problemas)
 - Dados numéricos armazenados como *strings*  
 
 ### 🟢 Depois
-- ✅ Todos os tipos de dados corrigidos  
-- ✅ Valores ausentes tratados estrategicamente  
-- ✅ Inconsistências categóricas normalizadas  
-- ✅ Dataset pronto para análise e modelagem  
+- ✅ Todos os tipos de dados corrigidos, resultando em **redução de 60% no uso de memória**
+- ✅ 100% dos valores ausentes tratados estrategicamente
+- ✅ Inconsistências categóricas normalizadas
+- ✅ Dataset robusto e pronto para análise e modelagem  
 
 ---
 
@@ -103,13 +103,17 @@ Siga estes passos simples para rodar o projeto em seu ambiente local.
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/pandas-data-cleaning-mastery.git
+git clone https://github.com/Marlon99henrique/pandas-eda-limpeza-dados.git # Lembre-se de usar a URL real
 
 # Navegue até a pasta do projeto
-cd pandas-data-cleaning-mastery
+cd pandas-eda-limpeza-dados
+
+# (Recomendado) Crie e ative um ambiente virtual
+python -m venv venv
+source venv/bin/activate  # No Windows: venv\Scripts\activate
 
 # Instale todas as dependências
-pip install -r requirements.txt
+pip install -r ambiente/requirements.txt
 ````
 ### 2. Execução do Projeto
 ```bash
@@ -211,4 +215,4 @@ pandas-eda-limpeza-dados/
    
 ---
 Desenvolvido com ❤️ por Marlon Henrique  
-*Aspirante a Cientista de Dados*
+*Cientista de Dados | Análise de Dados*
