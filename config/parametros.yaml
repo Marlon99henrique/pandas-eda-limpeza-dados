@@ -1,0 +1,281 @@
+# ⚙️ Parâmetros de Configuração - Telco Customer Churn
+# Este arquivo centraliza todas as configurações do projeto
+
+# ==================== CONFIGURAÇÕES GERAIS ====================
+geral:
+  nome_projeto: "Telco Customer Churn Analysis"
+  versao: "1.0.0"
+  autor: "Marlon Henrique"
+  email: "marlon.99henrique@gmail.com"
+  seed: 42  # Seed para reproducibilidade
+  modo_debug: False
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+
+# ==================== CONFIGURAÇÕES DE DADOS ====================
+dados:
+  # Entrada
+  arquivo_bruto: "../dados/brutos/WA_Fn-UseC_-Telco-Customer-Churn.csv"
+  encoding: "utf-8"
+  separador: ","
+  
+  # Saída
+  diretorio_processados: "../dados/processados/"
+  formato_saida: "csv"  # csv, parquet, feather, pkl
+  comprimir_saida: True
+  
+  # Colunas para análise
+  colunas_numericas:
+    - "tenure"
+    - "MonthlyCharges"
+    - "TotalCharges"
+  
+  colunas_categoricas:
+    - "gender"
+    - "SeniorCitizen"
+    - "Partner"
+    - "Dependents"
+    - "PhoneService"
+    - "MultipleLines"
+    - "InternetService"
+    - "OnlineSecurity"
+    - "OnlineBackup"
+    - "DeviceProtection"
+    - "TechSupport"
+    - "StreamingTV"
+    - "StreamingMovies"
+    - "Contract"
+    - "PaperlessBilling"
+    - "PaymentMethod"
+  
+  coluna_target: "Churn"
+  coluna_id: "customerID"
+
+# ==================== CONFIGURAÇÕES DE LIMPEZA ====================
+limpeza:
+  # Valores ausentes
+  limite_ausentes: 5.0  # Percentual máximo permitido
+  estrategia_ausentes:
+    TotalCharges: "mediana"
+    Dependents: "moda"
+    PhoneService: "moda"
+    default: "remover"  # remover, mediana, moda, valor_constante
+  
+  # Tipos de dados
+  mapeamento_tipos:
+    SeniorCitizen: "category"
+    Partner: "category"
+    Dependents: "category"
+    tenure: "int32"
+    PhoneService: "category"
+    MultipleLines: "category"
+    InternetService: "category"
+    OnlineSecurity: "category"
+    OnlineBackup: "category"
+    DeviceProtection: "category"
+    TechSupport: "category"
+    StreamingTV: "category"
+    StreamingMovies: "category"
+    Contract: "category"
+    PaperlessBilling: "category"
+    PaymentMethod: "category"
+    Churn: "category"
+    TotalCharges: "float32"
+    MonthlyCharges: "float32"
+  
+  # Normalização categórica
+  mapeamento_categorias:
+    Partner:
+      Yes: "Sim"
+      No: "Não"
+      Y: "Sim"
+      N: "Não"
+    Dependents:
+      Yes: "Sim"
+      No: "Não"
+      Y: "Sim"
+      N: "Não"
+    Churn:
+      Yes: "Sim"
+      No: "Não"
+      Churned: "Sim"
+      Stayed: "Não"
+    PhoneService:
+      Yes: "Sim"
+      No: "Não"
+    PaperlessBilling:
+      Yes: "Sim"
+      No: "Não"
+    MultipleLines:
+      No phone service: "Sem serviço telefônico"
+    OnlineSecurity:
+      No internet service: "Sem serviço de internet"
+    OnlineBackup:
+      No internet service: "Sem serviço de internet"
+    DeviceProtection:
+      No internet service: "Sem serviço de internet"
+    TechSupport:
+      No internet service: "Sem serviço de internet"
+    StreamingTV:
+      No internet service: "Sem serviço de internet"
+    StreamingMovies:
+      No internet service: "Sem serviço de internet"
+
+# ==================== CONFIGURAÇÕES DE VALIDAÇÃO ====================
+validacao:
+  # Estrutura
+  colunas_obrigatorias:
+    - "customerID"
+    - "Churn"
+    - "tenure"
+    - "MonthlyCharges"
+    - "TotalCharges"
+  
+  min_linhas: 1000
+  max_linhas: 10000
+  
+  # Valores aceitáveis
+  valores_aceitaveis:
+    Churn: ["Sim", "Não", "Yes", "No"]
+    SeniorCitizen: ["0", "1"]
+    Partner: ["Sim", "Não", "Yes", "No"]
+    Dependents: ["Sim", "Não", "Yes", "No"]
+  
+  # Range numérico
+  limites_numericos:
+    tenure:
+      min: 0
+      max: 100
+    MonthlyCharges:
+      min: 0
+      max: 1000
+    TotalCharges:
+      min: 0
+      max: 10000
+  
+  # Regras de consistência
+  regras_consistencia:
+    - condicao: "SeniorCitizen == '1' and tenure > 65"
+      mensagem: "Senior Citizen com tenure muito alto"
+    - condicao: "MonthlyCharges > TotalCharges"
+      mensagem: "MonthlyCharges não pode ser maior que TotalCharges"
+    - condicao: "TotalCharges < 0"
+      mensagem: "TotalCharges não pode ser negativo"
+
+# ==================== CONFIGURAÇÕES DE VISUALIZAÇÃO ====================
+visualizacao:
+  estilo: "seaborn"
+  contexto: "notebook"
+  palette: "viridis"
+  tamanho_figura: [12, 8]
+  dpi: 100
+  
+  # Cores específicas
+  cores:
+    churn_sim: "#FF6B6B"
+    churn_nao: "#4ECDC4"
+    neutro: "#45B7D1"
+    destaque: "#F9A826"
+  
+  # Configurações de gráficos
+  heatmap:
+    annot: True
+    fmt: ".2f"
+    cmap: "RdBu_r"
+    center: 0
+  
+  histograma:
+    bins: "auto"
+    alpha: 0.7
+    kde: True
+
+# ==================== CONFIGURAÇÕES DE MODELAGEM ====================
+modelagem:
+  # Divisão dos dados
+  teste_tamanho: 0.2
+  validacao_tamanho: 0.1
+  estratificar: True
+  
+  # Pré-processamento
+  escala_numericas: True
+  encoder_categoricas: "onehot"  # onehot, label, target
+  balancear_dados: True
+  metodo_balanceamento: "smote"  # smote, undersample, oversample
+  
+  # Hiperparâmetros
+  modelos:
+    RandomForest:
+      n_estimators: 100
+      max_depth: 10
+      random_state: 42
+    LogisticRegression:
+      C: 1.0
+      solver: "lbfgs"
+      max_iter: 1000
+    XGBoost:
+      learning_rate: 0.1
+      max_depth: 6
+      n_estimators: 100
+  
+  # Métricas de avaliação
+  metricas:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1"
+    - "roc_auc"
+  
+  # Thresholds
+  thresholds:
+    importancia_variavel: 0.01
+    correlacao_alta: 0.7
+    vif_multicolinearidade: 5.0
+
+# ==================== CONFIGURAÇÕES DE LOGGING ====================
+logging:
+  arquivo_log: "../logs/projeto.log"
+  formato: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  data_format: "%Y-%m-%d %H:%M:%S"
+  rotate_logs: True
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+# ==================== CONFIGURAÇÕES DE RELATÓRIOS ====================
+relatorios:
+  diretorio: "../relatorios/"
+  formato: "pdf"  # pdf, html, md
+  template: "default"
+  
+  # Conteúdo do relatório
+  secoes:
+    - "introducao"
+    - "metodologia"
+    - "exploracao"
+    - "limpeza"
+    - "analise"
+    - "resultados"
+    - "conclusoes"
+  
+  # Visualizações para incluir
+  visualizacoes_incluir:
+    - "distribuicoes_antes_depois"
+    - "heatmap_correlacao"
+    - "valores_ausentes"
+    - "churn_por_categoria"
+    - "importancia_variaveis"
+
+# ==================== CONFIGURAÇÕES DE PERFORMANCE ====================
+performance:
+  usar_multiprocessing: True
+  n_jobs: -1  # Usar todos os cores
+  batch_size: 1000
+  memory_cache: True
+  cache_dir: "../cache/"
+
+# ==================== CONFIGURAÇÕES DE DEPLOY ====================
+deploy:
+  salvar_modelo: True
+  formato_modelo: "pkl"  # pkl, joblib, onnx
+  versao_modelo: "1.0.0"
+  endpoint_api: "http://localhost:8000/predict"
+  timeout: 30
+  retry_attempts: 3

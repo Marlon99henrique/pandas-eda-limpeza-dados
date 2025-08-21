@@ -1,0 +1,59 @@
+# ⚙️ Ambiente Conda para o projeto Telco Customer Churn
+# Para criar ambiente: conda env create -f environment.yml
+# Para ativar: conda activate telco-churn-env
+
+name: telco-churn-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Python
+  - python=3.9.16
+  
+  # Análise de dados
+  - pandas=1.5.3
+  - numpy=1.24.3
+  - scipy=1.10.1
+  
+  # Visualização
+  - matplotlib=3.7.1
+  - seaborn=0.12.2
+  - plotly=5.14.1
+  
+  # Machine Learning
+  - scikit-learn=1.2.2
+  - imbalanced-learn=0.10.1
+  - statsmodels=0.14.0
+  
+  # Jupyter
+  - jupyter=1.0.0
+  - jupyterlab=3.6.3
+  - ipython=8.12.0
+  
+  # Utilidades
+  - tqdm=4.65.0
+  - pyyaml=6.0
+  - openpyxl=3.1.2
+  - pyarrow=12.0.0
+  
+  # Testes
+  - pytest=7.3.1
+  - pytest-cov=4.0.0
+  - black=23.3.0
+  - flake8=6.0.0
+  
+  # Versionamento
+  - dvc=3.0.3
+  
+  # PIP-only packages (instalados via pip dentro do conda)
+  - pip
+  - pip:
+    # Bibliotecas normalmente não disponíveis no conda
+    - category_encoders==2.6.1
+    - shap==0.41.0
+    - missingno==0.5.2
+
+# Variáveis de ambiente (opcional)
+variables:
+  PYTHONPATH: "${PYTHONPATH}:src"
+  MPLBACKEND: "Agg"
