@@ -102,15 +102,15 @@ conda env create -f ambiente/environment.yml
 ---
 ## 💡 Dicas
 -  1 .Sempre use ambiente virtual para evitar conflitos entre projetos
--  2. Mantenha as dependências atualizadas mas com versões específicas
--  3. Documente problemas encontrados durante a instalação
--  4. Use o mesmo ambiente em desenvolvimento e produção
+-  2 .Mantenha as dependências atualizadas mas com versões específicas
+-  3 .Documente problemas encontrados durante a instalação
+-  4 .Use o mesmo ambiente em desenvolvimento e produção
 
 ---
 ## 🆘 Suporte
 Se encontrar problemas na instalação:
--  1. Verifique se sua versão do Python é compatível (3.8+)
--  2. Consulte a documentação das bibliotecas
--  3. Verifique issues no GitHub do projeto
--  4. Consulte fóruns como Stack Overflow
+-  1 .Verifique se sua versão do Python é compatível (3.8+)
+-  2 .Consulte a documentação das bibliotecas
+-  3 .Verifique issues no GitHub do projeto
+-  4 .Consulte fóruns como Stack Overflow
 
