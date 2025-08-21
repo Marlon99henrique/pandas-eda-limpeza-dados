@@ -175,7 +175,8 @@ pandas-eda-limpeza-dados/
 │
 ├── ambiente/                     # 🐍 Configuração do ambiente
 │   ├── requirements.txt          # 📋 Dependências do projeto
-│   └── environment.yml           # ⚙️ Ambiente Conda (opcional)
+│   ├── environment.yml           # ⚙️ Ambiente Conda (opcional)
+│   └──README.md                  # 📖 Documentação
 │
 ├── config/                       # ⚙️ Arquivos de configuração
 │   └── parametros.yaml           # 📁 Parâmetros e configurações
