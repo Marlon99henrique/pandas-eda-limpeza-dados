@@ -7,7 +7,9 @@
 
 ## 🎯 Objetivo do Projeto
 
-Este projeto demonstra **domínio avançado da biblioteca Pandas** para limpeza e preparação de dados, utilizando o **dataset Telco Customer Churn** como estudo de caso. Através de técnicas profissionais, transformo dados brutos com problemas comuns (valores ausentes, inconsistências, tipos incorretos) em um conjunto limpo e pronto para análise.
+Projeto demonstra **domínio avançado da biblioteca Pandas** para limpeza e preparação de dados, utilizando o **dataset Telco Customer Churn** como estudo de caso. Através de técnicas profissionais, transformo dados brutos com problemas comuns (valores ausentes, inconsistências, tipos incorretos) em um conjunto limpo e pronto para análise.
+
+
 
 ---
 ## 🔍 Sobre o Dataset
@@ -115,10 +117,11 @@ source venv/bin/activate  # No Windows: venv\Scripts\activate
 # Instale todas as dependências
 pip install -r ambiente/requirements.txt
 ````
-### 2. Execução do Projeto
+### 2. Rodar os Notebooks
+
 ```bash
-# Inicie o Jupyter Notebook
-jupyter notebook
+# Abrir o notebook principal diretamente
+jupyter notebook notebooks/01_analise_telco.ipynb
 
 ```
 
