@@ -158,7 +158,7 @@ pandas-eda-limpeza-dados/
 │   ├── test_limpeza_dados.py     # ✅ Testes das funções de limpeza
 │   ├── test_validacao_dados.py   # ✅ Testes de validação
 │   ├── test_utils.py             # ✅ Testes dos utilitários
-│   └──test_visualizacao.py       # ✅ Testes de visualização
+│   └──test_visualizacao.py       # ✅ Testes de visualização  
 |
 ├── docs/                         # 📚 Documentação
 │   ├── metodologia.md            # 📋 Metodologia aplicada
