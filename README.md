@@ -126,7 +126,7 @@ pandas-eda-limpeza-dados/
 - 🔜 Feature Engineering para Machine Learning  
 - 🔜 Modelagem preditiva para previsão de churn  
 - 🔜 Automação de pipeline de EDA
-- 
+  
 ----
 
 ## 🤝 Contato  
