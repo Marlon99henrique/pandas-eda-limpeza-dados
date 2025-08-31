@@ -18,22 +18,23 @@ O objetivo é entender os padrões que levam clientes de uma empresa de telecomu
 
 ```bash
 telco-eda/
-├── ambiente/
-├── config/
-├── docs/
-├── notebooks/
+├── ambiente/         # Arquivos relacionados ao ambiente de execução (ex.: setup, configs de venv, docker)
+├── config/           # Arquivos de configuração (parâmetros, YAML/JSON com settings do projeto)
+├── docs/             # Documentação do projeto (descrições extras, relatórios, documentação técnica)
+├── notebooks/        # Jupyter Notebooks usados na análise (exploração, visualizações, relatórios)
 │   └── eda_telco.ipynb
-├── src/
-├── testes/
-├── data/
-│   ├── raw/          # dados originais (NÃO versionar)
-│   └── processed/    # dados tratados/derivados (NÃO versionar)
-├── .gitignore
-├── LICENSE
-├── README.md
-├── requirements.txt
-├── Makefile          # (opcional, facilita comandos)
-└── setup.py
+├── src/              # Código-fonte do projeto (funções utilitárias, pré-processamento, pipelines)
+├── testes/           # Testes automatizados (unitários, integração, validação das funções em src)
+├── data/             # Dados do projeto (NÃO versionar datasets reais)
+│   ├── raw/          # Dados brutos (originais, extraídos de Kaggle ou outra fonte)
+│   └── processed/    # Dados tratados, prontos para análise/modelagem
+├── .gitignore        # Arquivos e pastas ignorados pelo Git (datasets, checkpoints, cache, etc.)
+├── LICENSE           # Licença do projeto
+├── README.md         # Documentação principal do repositório
+├── requirements.txt  # Lista de dependências Python necessárias para rodar o projeto
+├── Makefile          # (opcional) Atalhos para automação de comandos (instalar deps, rodar notebook, testes)
+└── setup.py          # Script de instalação para transformar o projeto em pacote Python
+
 
 ````
 
