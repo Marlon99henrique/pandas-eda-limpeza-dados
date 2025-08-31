@@ -1,4 +1,4 @@
-# 📊 Telco EDA — Exploratory Data Analysis of Customer Churn
+# 📊 Telco EDA — Análise Exploratória do Churn de Clientes
 
 Este repositório contém uma análise exploratória completa do dataset **Telco Customer Churn**, disponível no [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn).  
 O objetivo é entender os padrões que levam clientes de uma empresa de telecomunicações a cancelar (churn) ou permanecer no serviço.
