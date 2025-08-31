@@ -18,11 +18,23 @@ O objetivo é entender os padrões que levam clientes de uma empresa de telecomu
 
 ```bash
 telco-eda/
-│── data/ # dataset (ou link para download)
-│── notebooks/ # notebooks de análise
-│ └── eda_telco.ipynb
-│── src/ # scripts auxiliares (se houver)
-│── README.md # documentação principal
+├── ambiente/
+├── config/
+├── docs/
+├── notebooks/
+│   └── eda_telco.ipynb
+├── src/
+├── testes/
+├── data/
+│   ├── raw/          # dados originais (NÃO versionar)
+│   └── processed/    # dados tratados/derivados (NÃO versionar)
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── Makefile          # (opcional, facilita comandos)
+└── setup.py
+
 ````
 
 
