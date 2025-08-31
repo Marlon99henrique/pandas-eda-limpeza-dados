@@ -15,12 +15,15 @@ O objetivo é entender os padrões que levam clientes de uma empresa de telecomu
 ---
 
 ## 🗂️ Estrutura do Repositório
+
+```bash
 telco-eda/
 │── data/ # dataset (ou link para download)
 │── notebooks/ # notebooks de análise
 │ └── eda_telco.ipynb
 │── src/ # scripts auxiliares (se houver)
-│── README.md # documentação principal  
+│── README.md # documentação principal
+````
 
 
 ---
