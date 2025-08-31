@@ -54,9 +54,9 @@ telco-eda/
 
 ## 🚀 Como Executar
 1. Clone este repositório:  
-   ```bash
-   git clone https://github.com/Marlon99henrique/telco-eda.git
-    ```
+```bash
+git clone https://github.com/Marlon99henrique/telco-eda.git
+```
 2. Acesse a pasta do projeto:
   ```bash
 cd telco-eda
