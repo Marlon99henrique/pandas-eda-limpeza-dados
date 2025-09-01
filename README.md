@@ -69,6 +69,18 @@ telco-eda/
 ---
 
 ## 🚀 Como Executar
+### 🔹 Windows (CMD ou PowerShell)
+```powershell
+.\make.bat install
+.\make.bat test
+.\make.bat run  
+
+### 🔹 Linux / macOS (Make)
+make install
+make test
+make run
+
+
 1. Clone este repositório:  
 ```bash
 git clone https://github.com/Marlon99henrique/telco-eda.git

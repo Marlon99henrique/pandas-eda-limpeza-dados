@@ -1,0 +1,48 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "▶️ Rodar CLI (normal)",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/cli.py",
+            "console": "integratedTerminal",
+            "args": []
+        },
+        {
+            "name": "🧹 CLI - Clean",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/cli.py",
+            "console": "integratedTerminal",
+            "args": [
+                "clean",
+                "--input", "dados/brutos/telco.csv",
+                "--output", "dados/processados/"
+            ]
+        },
+        {
+            "name": "✅ CLI - Validate",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/cli.py",
+            "console": "integratedTerminal",
+            "args": [
+                "validate",
+                "--data", "dados/processados/telco_limpo.csv"
+            ]
+        },
+        {
+            "name": "📊 CLI - Explore",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/cli.py",
+            "console": "integratedTerminal",
+            "args": [
+                "explore",
+                "--data", "dados/processados/telco_limpo.csv",
+                "--report"
+            ]
+        }
+    ]
+}

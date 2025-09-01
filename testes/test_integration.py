@@ -13,6 +13,10 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 
+# backend headless para ambientes CI/sem GUI
+import matplotlib
+matplotlib.use("Agg")
+
 from src.utils import carregar_dados, salvar_dados
 from src.limpeza_dados import pipeline_limpeza_completa
 from src.validacao_dados import ValidadorDados
@@ -45,7 +49,7 @@ def _criar_dataset_sintetico(caminho: Path) -> None:
             ["Electronic check", "Mailed check", "Bank transfer", "Credit card"], size=n
         ),
         "MonthlyCharges": np.round(np.random.uniform(20, 120, size=n), 2),
-        # Intencionalmente introduzimos alguns NaNs para testar a limpeza
+        # Intencionalmente alguns NaNs para testar a limpeza
         "TotalCharges": pd.Series(np.round(np.random.uniform(20, 8000, size=n), 2)).mask(
             np.random.rand(n) < 0.05
         ),
@@ -73,7 +77,7 @@ def test_pipeline_integracao(tmp_path):
     # Deve ter removido/ajustado NaNs relevantes
     assert df_clean.isnull().sum().sum() == 0
 
-    # Features criadas no seu pipeline
+    # Features criadas no pipeline
     for col in ["TenureGroup", "TotalServicos", "TipoCliente", "CustoPorServico"]:
         assert col in df_clean.columns
 
@@ -81,9 +85,7 @@ def test_pipeline_integracao(tmp_path):
     val = ValidadorDados(df_clean, "Telco (limpo)")
     r1 = val.verificar_valores_ausentes()
     r2 = val.verificar_duplicatas()
-    # Após limpeza, o ideal é zero ausentes
     assert r1.sucesso is True
-    # Não exigimos zero duplicatas no sintético, mas normalmente é True
     assert isinstance(r2.sucesso, bool)
 
     relatorio = val.gerar_relatorio_validacao()

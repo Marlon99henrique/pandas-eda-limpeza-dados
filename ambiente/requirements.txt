@@ -1,46 +1,43 @@
 # 📋 Requirements para o projeto Telco Customer Churn
-# Versões específicas para garantir reproducibilidade
+# Compatível com Python 3.12
 
 # Análise de dados
-pandas==1.5.3
-numpy==1.24.3
-scipy==1.10.1
+pandas==2.2.2
+numpy==1.26.4
+scipy==1.13.1
 
 # Visualização
-matplotlib==3.7.1
-seaborn==0.12.2
-plotly==5.14.1
+matplotlib==3.9.0
+seaborn==0.13.2
+plotly==5.22.0
 
 # Machine Learning
-scikit-learn==1.2.2
-imbalanced-learn==0.10.1
-statsmodels==0.14.0
+scikit-learn==1.5.0
+imbalanced-learn==0.12.3
+statsmodels==0.14.2
 
 # Jupyter e Desenvolvimento
 jupyter==1.0.0
-jupyterlab==3.6.3
-ipython==8.12.0
-ipykernel==6.22.0
+jupyterlab==4.2.0
+ipython==8.25.0
+ipykernel==6.29.4
 
 # Utilidades
-tqdm==4.65.0
-pyyaml==6.0
-openpyxl==3.1.2
-pyarrow==12.0.0
+tqdm==4.66.4
+pyyaml==6.0.1
+openpyxl==3.1.4
+pyarrow==16.1.0
 
 # Testes e Qualidade
-pytest==7.3.1
-pytest-cov==4.0.0
-black==23.3.0
-flake8==6.0.0
+pytest==8.2.2
+pytest-cov==5.0.0
+black==24.4.2
+flake8==7.1.0
 
 # Versionamento de dados
-dvc==3.0.3
+dvc==3.51.2
 
 # Outras dependências
-python-dateutil==2.8.2
-pytz==2023.3
-tzdata==2023.3
-
-# Para instalar: pip install -r requirements.txt
-# Para gerar: pip freeze > requirements.txt
+python-dateutil==2.9.0.post0
+pytz==2024.1
+tzdata==2024.1
