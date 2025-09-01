@@ -91,7 +91,3 @@ __all__ = [
     'gerar_resumo_dataset'
 ]
 
-# Mensagem quando o pacote é importado
-print(f"✅ Pacote src versão {__version__} importado com sucesso!")
-print("📊 Módulos disponíveis: limpeza_dados, validacao_dados, visualizacao, utils")
-print("💡 Use 'from src import <função>' para acessar as funções principais")
